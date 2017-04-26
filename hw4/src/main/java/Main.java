@@ -12,31 +12,30 @@ import java.util.Map;
 
 /*
  -agentlib:jdwp=transport=dt_socket,address=14000,server=y,suspend=n
- -Xms512m
- -Xmx512m
- -XX:MaxMetaspaceSize=256m
- -XX:+UseConcMarkSweepGC
- -XX:+CMSParallelRemarkEnabled
- -XX:+UseCMSInitiatingOccupancyOnly
- -XX:CMSInitiatingOccupancyFraction=50
- -XX:+ScavengeBeforeFullGC
- -XX:+CMSScavengeBeforeRemark
- -XX:+UseParNewGC
- -verbose:gc
- -Xloggc:./logs/gc_pid_%p.log
- -XX:+PrintGCDateStamps
- -XX:+PrintGCDetails
- -XX:+UseGCLogFileRotation
- -XX:NumberOfGCLogFiles=10
- -XX:GCLogFileSize=1M
- -Dcom.sun.management.jmxremote.port=15000
- -Dcom.sun.management.jmxremote.authenticate=false
- -Dcom.sun.management.jmxremote.ssl=false
- -XX:+HeapDumpOnOutOfMemoryError
- -XX:HeapDumpPath=./dumps/
- -XX:OnOutOfMemoryError="kill -3 %p"
- jinfo -- list VM parameters
- jhat / jvisualvm -- analyze heap dump
+-Xms256m
+-Xmx256m
+-XX:MaxMetaspaceSize=64m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSParallelRemarkEnabled
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:CMSInitiatingOccupancyFraction=60
+-XX:+ScavengeBeforeFullGC
+-XX:+CMSScavengeBeforeRemark
+-XX:+UseParNewGC
+-verbose:gc
+-Xloggc:./hw4/logs/gc_pid_%p.log
+-XX:+PrintGCDateStamps
+-XX:+PrintGCTimeStamps
+-XX:+PrintGCDetails
+-XX:+UseGCLogFileRotation
+-XX:NumberOfGCLogFiles=10
+-XX:GCLogFileSize=3M
+-Dcom.sun.management.jmxremote.port=15000
+-Dcom.sun.management.jmxremote.authenticate=false
+-Dcom.sun.management.jmxremote.ssl=false
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=./hw4/dumps/
+-XX:OnOutOfMemoryError="kill -3 %p"
  */
 public class Main
 {
