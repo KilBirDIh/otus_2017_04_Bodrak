@@ -23,13 +23,13 @@ public class MyArrayList<T> implements List<T>
     @Override
     public boolean isEmpty()
     {
-        return false;
+         throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean contains(Object o)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,13 +62,13 @@ public class MyArrayList<T> implements List<T>
     @Override
     public boolean remove(Object o)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean containsAll(Collection<?> c)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -85,25 +85,25 @@ public class MyArrayList<T> implements List<T>
     @Override
     public boolean addAll(int index, Collection<? extends T> c)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean removeAll(Collection<?> c)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean retainAll(Collection<?> c)
     {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void clear()
     {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -152,13 +152,13 @@ public class MyArrayList<T> implements List<T>
     @Override
     public int indexOf(Object o)
     {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public int lastIndexOf(Object o)
     {
-        return 0;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -170,13 +170,13 @@ public class MyArrayList<T> implements List<T>
     @Override
     public ListIterator<T> listIterator(int index)
     {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<T> subList(int fromIndex, int toIndex)
     {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     private void reallocation(int size, int capacity)
@@ -238,7 +238,7 @@ public class MyArrayList<T> implements List<T>
         @Override
         public T previous()
         {
-            return null;
+            throw new UnsupportedOperationException();
         }
 
         @Override
@@ -256,7 +256,7 @@ public class MyArrayList<T> implements List<T>
         @Override
         public void remove()
         {
-
+            throw new UnsupportedOperationException();
         }
 
         @Override
@@ -268,7 +268,7 @@ public class MyArrayList<T> implements List<T>
         @Override
         public void add(T t)
         {
-
+            throw new UnsupportedOperationException();
         }
     }
 }
