@@ -11,13 +11,23 @@ import java.util.List;
  * выдавать запрошенную сумму минимальным количеством банкнот или ошибку если сумму нельзя выдать
  * выдавать сумму остатка денежных средств
  */
-public abstract class ATM implements Restorable
+public class ATM
 {
+    private ATMMemento initialState;
     private List<Cell> cells;
+    private final ExchangeRate exchangeRate;
 
-    ATM()
+    public ATM(ExchangeRate exchangeRate, Cell... cells)
     {
-        cells = new ArrayList<>();
+        this.exchangeRate = exchangeRate;
+        this.cells = new ArrayList<>();
+        Collections.addAll(this.cells, cells);
+        initialState = new ATMMemento(this.cells);
+    }
+
+    public void restoreToInitialState()
+    {
+        this.cells = initialState.getSavedState();
     }
 
     public void increaseBalance(int nominal, int count)
@@ -31,10 +41,6 @@ public abstract class ATM implements Restorable
                 return;
             }
         }
-        Cell cell = new Cell();
-        cell.setCount(count);
-        cell.setNominal(nominal);
-        cells.add(cell);
     }
 
     public int getBalance()
@@ -42,7 +48,7 @@ public abstract class ATM implements Restorable
         int balance = 0;
         for (Cell cell : cells)
         {
-            balance += cell.getNominal() * cell.getCount();
+            balance += cell.getNominal() * cell.getCount() * exchangeRate.getMultiplier();
         }
         return balance;
     }

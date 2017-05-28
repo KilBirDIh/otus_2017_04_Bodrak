@@ -3,12 +3,12 @@ package atm;
 public class Cell implements Comparable<Cell>
 {
     private int count;
-    private int nominal;
+    private final int nominal;
 
-    Cell()
+    public Cell(int nominal)
     {
         count = 0;
-        nominal = 0;
+        this.nominal = nominal;
     }
 
     int getCount()
@@ -26,10 +26,6 @@ public class Cell implements Comparable<Cell>
         return nominal;
     }
 
-    void setNominal(int nominal)
-    {
-        this.nominal = nominal;
-    }
 
     @Override
     public int compareTo(Cell o)

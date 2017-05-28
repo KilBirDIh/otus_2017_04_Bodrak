@@ -41,6 +41,6 @@ public class ATMDepartment
 
     public void restoreATMs()
     {
-        atmList.forEach(ATM::restore);
+        atmList.forEach(ATM::restoreToInitialState);
     }
 }
